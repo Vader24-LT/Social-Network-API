@@ -1,7 +1,9 @@
 // utils/seed.ts
+import db from '../config/connection.js';
 import { User, Thought } from '../models/index.js'; // Adjust the import path as necessary
 const seedData = async () => {
     try {
+        await db();
         // Delete existing data
         await User.deleteMany({});
         await Thought.deleteMany({});
